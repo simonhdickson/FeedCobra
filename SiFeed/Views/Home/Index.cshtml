@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Argotic.Syndication.RssItem>
+
+@{
+    ViewBag.Title = "Cheese";
+}
+<div class="accordion" id="accordion2">
+    @foreach (var it in Model.Select((x, i) => new { FeedItem = x, Id = string.Format("collapse{0}", i) }))
+    {
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#@it.Id">
+                    >@it.FeedItem.Title
+                </a>
+            </div>
+            <div id="@it.Id" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    @it.FeedItem.Description
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<ul class="pager">
+    <li class="previous">
+        <a id="previous" href="#">&larr; Older</a>
+    </li>
+    <li class="next">
+        <a id="next" href="#">Newer &rarr;</a>
+    </li>
+</ul>
+
+@section scripts
+{
+    <script type="text/javascript">
+        $("#previous").click(function() {
+
+        });
+        $("#next").click(function() {
+
+        });
+    </script>
+}
