@@ -17,6 +17,8 @@ namespace FeedCobra.Services
 
         public IEnumerable<RssItem> GetFeedForUser(string username)
         {
+            // Massively inefficent to a point that could not be stressed enough
+            // but will improve in 2.0
             var feed = subscriptionContext.Subscriptions
                             .Where(s => s.Feed.Type == "rss")
                             .Select(s => s.Feed.XmlUrl).ToArray()

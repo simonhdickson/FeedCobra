@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Argotic.Syndication;
 using Autofac;
 using Autofac.Integration.Mvc;
 using FeedCobra.Models;
@@ -27,7 +24,7 @@ namespace FeedCobra
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<FeedService>().InstancePerHttpRequest();
+            builder.RegisterType<FeedService>().As<IFeedService<RssItem>>().InstancePerHttpRequest();
         }
     }
 }
