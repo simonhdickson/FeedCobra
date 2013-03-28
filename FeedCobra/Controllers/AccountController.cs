@@ -6,11 +6,11 @@ using System.Web.Mvc;
 using System.Web.Security;
 using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
-using SiFeed.Filters;
-using SiFeed.Models;
+using FeedCobra.Filters;
+using FeedCobra.Models;
 using WebMatrix.WebData;
 
-namespace SiFeed.Controllers
+namespace FeedCobra.Controllers
 {
     [Authorize]
     [InitializeSimpleMembership]

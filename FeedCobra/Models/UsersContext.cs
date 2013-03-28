@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 
-namespace SiFeed.Models
+namespace FeedCobra.Models
 {
     public class UsersContext : DbContext
     {
@@ -20,11 +20,7 @@ namespace SiFeed.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int UserId { get; set; }
-
         public string UserName { get; set; }
-
-        public IList<Subscription> Subscriptions { get; set; }
     }
 
     public class RegisterExternalLoginModel

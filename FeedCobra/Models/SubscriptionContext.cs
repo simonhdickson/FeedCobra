@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 
-namespace SiFeed.Models
+namespace FeedCobra.Models
 {
     public class SubscriptionContext : DbContext
     {
@@ -11,19 +12,38 @@ namespace SiFeed.Models
         {
         }
 
-        public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<Subscription> Subscriptions { get; set; }
     }
 
-    [Table("Subscription")]
-    public class Subscription
+    [Table("Feeds")]
+    public class Feed
     {
-        [Key]
+        [Key, Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        public string Feed { get; set; }
+        [Key, Column(Order = 1)]
+        public string XmlUrl { get; set; }
+
+        public string Type { get; set; }
+
+        public string HtmlUrl { get; set; }
     }
 
+    [Table("Subscriptions")]
+    public class Subscription
+    {
+        [Key]
+        public string UserName { get; set; }
+
+        public Feed Feed { get; set; }
+
+        public string Name { get; set; }
+
+        public ICollection<string> Tags { get; set; }
+    }
+
+    
     public class RegisterSubscriptionModel
     {
         [Required]
