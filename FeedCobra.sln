@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedCobra", "SiFeed\FeedCobra.csproj", "{2D873935-1DE9-464F-9424-A3242F1E634F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedCobra", "FeedCobra\FeedCobra.csproj", "{2D873935-1DE9-464F-9424-A3242F1E634F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{8E7578E0-6A4A-49DF-B33A-B3422726DDAA}"
 	ProjectSection(SolutionItems) = preProject
